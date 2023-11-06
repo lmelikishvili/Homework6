@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/walpaper"
+    tools:context=".MainActivity">
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/firstName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edfirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:hint="First Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/firstName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:hint="Last Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/age"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/lastName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/white"
+            android:hint="Age" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/age">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:hint="Email"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintStart_toEndOf="parent"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLength="16"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:hint="Password"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add User"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pass" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove User"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAdd" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update User"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRemove" />
+
+    <androidx.appcompat.widget.AppCompatCheckedTextView
+        android:id="@+id/tvActivs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Acrive Users: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnUpdate" />
+
+    <androidx.appcompat.widget.AppCompatCheckedTextView
+        android:id="@+id/tvDeleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Deleted Users: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvActivs" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
