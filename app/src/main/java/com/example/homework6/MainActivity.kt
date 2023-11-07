@@ -3,6 +3,7 @@ package com.example.homework6
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         var users = mutableMapOf<String, PersonData>()
         var deletedUsers = mutableMapOf<String, PersonData>()
 
+
         emailFocusListener()
         passFocusListener()
         ageFocusListener()
@@ -40,10 +42,10 @@ class MainActivity : AppCompatActivity() {
             var userID: String
 
             if (users.containsKey(email)){
-                Toast.makeText(this, "User already exists", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Html.fromHtml("<font color='#FF0000' >User already exists<b>") , Toast.LENGTH_SHORT).show()
             }else{
                 users[email] = PersonData(firstName,lastName,age,email,password)
-                Toast.makeText(this, "User added successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Html.fromHtml("<font color='#008000' >User added successfully<b>") , Toast.LENGTH_SHORT).show()
                 binding.tvActivs.text = "Active Users: ${users.count()}"
             }
         }
@@ -55,12 +57,12 @@ class MainActivity : AppCompatActivity() {
                 users[email]?.let { it1 -> deletedUsers.put(email, it1) }
                 users.remove(email)
                 binding.tvActivs.text = "Active Users: ${users.count()}"
-                Toast.makeText(this, "User Deleted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Html.fromHtml("<font color='#008000' >User deleted successfully<b>"), Toast.LENGTH_SHORT).show()
 
                 binding.tvDeleted.text = "Deleted Users: ${deletedUsers.count()}"
 
             }else{
-                Toast.makeText(this, "User Not Exist!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Html.fromHtml("<font color='#FF0000' >User does not exits<b>") , Toast.LENGTH_SHORT).show()
                 binding.tvDeleted.text = "Deleted Users: ${deletedUsers.count()}"
                 binding.tvActivs.text = "Active Users: ${users.count()}"
             }
@@ -77,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             if(users.containsKey(email)){
                 users.get(email)?.let { it.firstName = firstName; it.lastName=lastName; it.age = age; it.password = password }
                 users.get(email)?.age
-                Toast.makeText(this, "User Updated!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Html.fromHtml("<font color='#008000' >User Updated successfully<b>"), Toast.LENGTH_SHORT).show()
 
                 var newFirstName = users[email]?.firstName
                 val newLastName = users[email]?.lastName
@@ -87,9 +89,8 @@ class MainActivity : AppCompatActivity() {
 
                 binding.edfirstName.setText("New name:" + users[email]?.firstName)
             }else{
-                Toast.makeText(this, "User Not Exist!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,Html.fromHtml("<font color='#FF0000' >User does not exits<b>") , Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 
